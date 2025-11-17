@@ -1,0 +1,7 @@
+{
+    "jestrunner.codeLensSelector": "**/*.{test,spec,e2e-spec}.{js,jsx,ts,tsx}",
+    "jestrunner.configPath": "test/jest-e2e.json",
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnPaste": true
+}

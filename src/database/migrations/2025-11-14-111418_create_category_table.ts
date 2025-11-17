@@ -1,0 +1,15 @@
+import type { Knex } from 'knex';
+
+export async function up(knex: Knex): Promise<void> {
+  return knex.raw(`
+    create table category (
+      id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+      "name" varchar(255) not null,
+      entity varchar(255),
+      created_at timestamp(6) NOT NULL DEFAULT now(),
+      updated_at timestamp(6) NOT NULL DEFAULT now()
+    )
+  `);
+}
+
+export async function down(knex: Knex): Promise<void> {}
