@@ -13,6 +13,7 @@
 - in browser type http://localhost/categories
 - install Jest Runner plugin
 - intall Prettier plugin
+- create .env from env-example file
 
 ## Swagger documentation
 - localhost/api
