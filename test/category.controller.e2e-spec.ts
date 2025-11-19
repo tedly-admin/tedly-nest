@@ -1,5 +1,8 @@
 import { INestApplication } from '@nestjs/common';
-import { CreateCategoryDto, UpdateCategoryDto } from 'src/app/category/dto/category.dto';
+import {
+  CreateCategoryDto,
+  UpdateCategoryDto,
+} from 'src/app/category/dto/category.dto';
 import request from 'supertest';
 import { App } from 'supertest/types';
 import {
@@ -80,11 +83,11 @@ describe('CategoryController (e2e)', () => {
 
     it('should return all categories', async () => {
       // Create test categories
-      const category1 : CreateCategoryDto = {
+      const category1: CreateCategoryDto = {
         name: 'Category 1',
         entity: 'entity-1',
       };
-      const category2 : CreateCategoryDto = {
+      const category2: CreateCategoryDto = {
         name: 'Category 2',
         entity: 'entity-2',
       };
