@@ -67,7 +67,7 @@ describe('DocumentController (e2e)', () => {
     });
 
     it('should create a document with minimal fields', () => {
-      const createDocumentDto : CreateDocumentDto = {
+      const createDocumentDto: CreateDocumentDto = {
         name: 'Test Document',
       };
 

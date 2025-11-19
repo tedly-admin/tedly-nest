@@ -16,17 +16,6 @@ import { BookEntity } from './entities/book.entity';
 export class BookController {
   constructor(private readonly bookService: BookService) {}
 
-  private toDto(entity: BookEntity): BookResponseDto {
-    return {
-      id: entity.id,
-      title: entity.title,
-      description: entity.description,
-      name: entity.name,
-      created_at: entity.created_at,
-      updated_at: entity.updated_at,
-    };
-  }
-
   @Post()
   async create(@Body() createBookDto: CreateBookDto): Promise<BookResponseDto> {
     const book = await this.bookService.create(createBookDto);
@@ -59,5 +48,16 @@ export class BookController {
   @Delete(':id')
   remove(@Param('id', ParseIntPipe) id: number): Promise<void> {
     return this.bookService.remove(id);
+  }
+
+  private toDto(entity: BookEntity): BookResponseDto {
+    return {
+      id: entity.id,
+      title: entity.title,
+      description: entity.description,
+      name: entity.name,
+      created_at: entity.created_at,
+      updated_at: entity.updated_at,
+    };
   }
 }

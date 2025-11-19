@@ -11,4 +11,3 @@ import { BookEntity } from './entities/book.entity';
   exports: [BookService],
 })
 export class BookModule {}
-

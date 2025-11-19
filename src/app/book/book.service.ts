@@ -30,10 +30,7 @@ export class BookService {
     return book;
   }
 
-  async update(
-    id: number,
-    updateBookDto: UpdateBookDto,
-  ): Promise<BookEntity> {
+  async update(id: number, updateBookDto: UpdateBookDto): Promise<BookEntity> {
     const book = await this.findOne(id);
     Object.assign(book, updateBookDto);
     return await this.bookRepository.save(book);
@@ -44,4 +41,3 @@ export class BookService {
     await this.bookRepository.remove(book);
   }
 }
-

@@ -6,7 +6,6 @@ import { DocumentEntity } from '../app/document/entities/document.entity';
 import { BookEntity } from '../app/book/entities/book.entity';
 import { DatabaseService } from './database.service';
 
-
 @Global()
 @Module({
   imports: [

@@ -100,15 +100,9 @@ describe('BookController (e2e)', () => {
         name: 'book-2',
       };
 
-      await request(app.getHttpServer())
-        .post('/books')
-        .send(book1)
-        .expect(201);
+      await request(app.getHttpServer()).post('/books').send(book1).expect(201);
 
-      await request(app.getHttpServer())
-        .post('/books')
-        .send(book2)
-        .expect(201);
+      await request(app.getHttpServer()).post('/books').send(book2).expect(201);
 
       return request(app.getHttpServer())
         .get('/books')
@@ -189,7 +183,7 @@ describe('BookController (e2e)', () => {
           expect(res.body.name).toBe(updateBookDto.name);
           expect(res.body).toHaveProperty('updated_at');
         });
-    }); 
+    });
 
     // it('should update a book partially', async () => {
     //   // Create a book first
@@ -250,21 +244,14 @@ describe('BookController (e2e)', () => {
 
       const bookId = createResponse.body.id;
 
-      await request(app.getHttpServer())
-        .delete(`/books/${bookId}`)
-        .expect(200);
+      await request(app.getHttpServer()).delete(`/books/${bookId}`).expect(200);
 
       // Verify it's deleted
-      return request(app.getHttpServer())
-        .get(`/books/${bookId}`)
-        .expect(404);
+      return request(app.getHttpServer()).get(`/books/${bookId}`).expect(404);
     });
 
     it('should return 404 when deleting non-existent book', () => {
-      return request(app.getHttpServer())
-        .delete('/books/99999')
-        .expect(404);
+      return request(app.getHttpServer()).delete('/books/99999').expect(404);
     });
   });
 });
-

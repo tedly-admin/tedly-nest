@@ -4,6 +4,7 @@ import { App } from 'supertest/types';
 import { TestContainerHelper } from './test-container.helper';
 import { DataSource } from 'typeorm';
 import { configureApp } from '../../src/common/utils/app-config.util';
+
 export interface E2ETestSetup {
   app: INestApplication<App>;
   testContainerHelper: TestContainerHelper;
