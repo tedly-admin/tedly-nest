@@ -8,7 +8,7 @@
 
 - create db in postgres with name 'tedly_nest'
 - npm i
-- npm run start:dev
+- npm run dev
 - in browser type http://localhost:5000/categories
 - install Jest Runner plugin
 - intall Prettier plugin
