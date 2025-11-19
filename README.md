@@ -1,5 +1,3 @@
-
-
 ## Requirment
 - Node 24
 - Postgres 17
