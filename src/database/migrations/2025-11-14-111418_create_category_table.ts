@@ -1,8 +1,6 @@
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
-exports.up = async function (knex) {
+import type { Knex } from 'knex';
+
+export async function up(knex: Knex): Promise<void> {
   return knex.raw(`
     create table category (
       id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -12,10 +10,6 @@ exports.up = async function (knex) {
       updated_at timestamp(6) NOT NULL DEFAULT now()
     )
   `);
-};
+}
 
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
-exports.down = async function (knex) {};
+export async function down(knex: Knex): Promise<void> {}

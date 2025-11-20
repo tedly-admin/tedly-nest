@@ -7,12 +7,11 @@ dotenv.config();
 
 // Determine if we're in production (compiled code)
 // In production, code runs from dist/, in development from src/
-// const isProduction = process.env.NODE_ENV === 'production';
-const isTest = ['development', 'test'].includes(process.env.NODE_ENV || '');
+const isProduction = process.env.NODE_ENV === 'production';
 
 function getMigrationsDirectory(): string {
-  return isTest
-    ? path.join(__dirname, 'src/database/')
+  return isProduction
+    ? path.join(__dirname, '/database/')
     : path.join(__dirname, '../src/database/');
 }
 
@@ -32,7 +31,7 @@ const config: Knex.Config = {
   migrations: {
     tableName: 'knex_migrations',
     directory: getMigrationsDirectory() + 'migrations',
-    extension: 'js',
+    loadExtensions: isProduction ? ['.js'] : ['.ts'],
   },
   seeds: {
     directory: getMigrationsDirectory() + 'seeds',
